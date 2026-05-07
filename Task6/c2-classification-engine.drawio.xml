@@ -1,0 +1,132 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.2.9 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.2.9">
+  <diagram name="C2 Classification Engine" id="task6-c2">
+    <mxGraphModel dx="1291" dy="1006" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;align=left;verticalAlign=bottom;spacing=10;dashPattern=8 4;fontSize=14;" value="Движок классификации данных (перед batch‑загрузкой в аналитику)" vertex="1">
+          <mxGeometry height="900" width="1420" x="240" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="src-domains" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f0fe;strokeColor=#2b5fd9;fontColor=#1a3d8f;align=center;fontSize=12;" value="Доменные сервисы&#xa;(EMR/Lab/Billing/Appointments)" vertex="1">
+          <mxGeometry height="90" width="200" x="20" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="src-files" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f0fe;strokeColor=#2b5fd9;fontColor=#1a3d8f;align=center;fontSize=12;" value="Файлы/выгрузки&#xa;(CSV/JSON/PDF meta)" vertex="1">
+          <mxGeometry height="90" width="200" x="20" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="ingest" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;strokeColor=#0D5091;fontColor=#ffffff;align=center;fontSize=12;" value="Batch Ingest Service&#xa;(scheduler + connectors)" vertex="1">
+          <mxGeometry height="90" width="240" x="340" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="landing" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f0f0f0;strokeColor=#555555;fontColor=#333333;fontSize=12;align=center;" value="Landing (Staging)&#xa;raw batches" vertex="1">
+          <mxGeometry height="90" width="220" x="620" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="schema" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2b8a3e;strokeColor=#1f6b2f;fontColor=#ffffff;align=center;fontSize=12;" value="Schema Registry&#xa;+ Inference" vertex="1">
+          <mxGeometry height="90" width="220" x="500" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="dq" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2b8a3e;strokeColor=#1f6b2f;fontColor=#ffffff;align=center;fontSize=12;" value="Data Quality Gate&#xa;(contracts + rules)" vertex="1">
+          <mxGeometry height="90" width="220" x="830" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="classifier" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2b8a3e;strokeColor=#1f6b2f;fontColor=#ffffff;align=center;fontSize=12;" value="Classification Engine&#xa;(rules + ML + patterns)" vertex="1">
+          <mxGeometry height="90" width="220" x="900" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="catalog" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2b8a3e;strokeColor=#1f6b2f;fontColor=#ffffff;align=center;fontSize=12;" value="Data Catalog / Tag Store&#xa;(tags + lineage)" vertex="1">
+          <mxGeometry height="90" width="240" x="1150" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="policy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2b8a3e;strokeColor=#1f6b2f;fontColor=#ffffff;align=center;fontSize=12;" value="Policy Enforcement&#xa;(mask/tokenize/quarantine)" vertex="1">
+          <mxGeometry height="90" width="240" x="1070" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="kms" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2b8a3e;strokeColor=#1f6b2f;fontColor=#ffffff;align=center;fontSize=12;" value="KMS/HSM" vertex="1">
+          <mxGeometry height="90" width="150" x="1330" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="audit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7e6;strokeColor=#d9822b;fontColor=#333333;align=center;fontSize=12;" value="Audit + Metrics&#xa;(FP/FN, coverage, drift)" vertex="1">
+          <mxGeometry height="90" width="230" x="1460" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="raw" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f0f0f0;strokeColor=#555555;fontColor=#333333;fontSize=12;align=center;" value="Lakehouse RAW&#xa;(restricted)" vertex="1">
+          <mxGeometry height="90" width="220" x="290" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="quarantine" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#ffe6e6;strokeColor=#cc0000;fontColor=#333333;fontSize=12;align=center;" value="Quarantine Zone" vertex="1">
+          <mxGeometry height="90" width="220" x="580" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="curated" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#f0f0f0;strokeColor=#555555;fontColor=#333333;fontSize=12;align=center;" value="Lakehouse CURATED&#xa;(pseudonymized)" vertex="1">
+          <mxGeometry height="90" width="240" x="900" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="sensitive" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#fff7e6;strokeColor=#d9822b;fontColor=#333333;fontSize=12;align=center;" value="Sensitive Enclave&#xa;(optional)" vertex="1">
+          <mxGeometry height="90" width="220" x="1210" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="bi" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;strokeColor=#0D5091;fontColor=#ffffff;align=center;fontSize=12;" value="BI / Semantic Layer" vertex="1">
+          <mxGeometry height="80" width="200" x="1050" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="ml" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1061B0;strokeColor=#0D5091;fontColor=#ffffff;align=center;fontSize=12;" value="ML / Feature Store" vertex="1">
+          <mxGeometry height="80" width="200" x="1260" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="steward" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontColor=#333333;align=center;fontSize=12;" value="Data Steward&#xa;(разметка/разбор unknown)" vertex="1">
+          <mxGeometry height="90" width="200" x="20" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="src-domains" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="ingest" value="batch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="src-files" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="ingest" value="batch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="ingest" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="landing" value="write">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="landing" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#2b8a3e;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="schema" value="infer schema">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="landing" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#2b8a3e;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="classifier" value="classify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="classifier" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#2b8a3e;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="catalog" value="tags+lineage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="schema" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#2b8a3e;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="dq" value="DQ check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="dq" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#2b8a3e;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="policy" value="enforce">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="catalog" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#2b8a3e;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="policy" value="use tags">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="policy" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#2b8a3e;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="kms" value="keys">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="classifier" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#d9822b;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="audit" value="metrics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="policy" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#d9822b;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="audit" value="audit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="policy" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="raw" value="store raw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="policy" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#cc0000;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="quarantine" value="quarantine">
+          <mxGeometry relative="1" x="0.0526" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="820" y="375" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="policy" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="curated" value="curate (tokenize)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="policy" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#d9822b;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="sensitive" value="allow PHI only if needed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="curated" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="bi" value="marts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="curated" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#828282;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="ml" value="features">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="audit" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#666666;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="steward" value="review unknown / FN cases">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="steward" style="endArrow=blockThin;html=1;strokeWidth=2;strokeColor=#666666;endFill=1;edgeStyle=orthogonalEdgeStyle;" target="classifier" value="label rules/model update">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
